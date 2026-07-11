@@ -1,25 +1,35 @@
-# Còsy
+# Còsy — stillwater.
 
 > An afternoon that lowers your shoulders.
 
-A concept client site — part of the [Nathan AI Solutions](https://github.com/Nayphilim) portfolio,
-showcasing a production-quality build in a specific modern stack.
+A concept spa booking flow — part of the
+[Nathan AI Solutions](https://github.com/Nayphilim) portfolio.
 
-**Stack:** Angular
+**Stack:** Angular 22 (standalone, signals) built to a static SPA.
 
 ## About
 
-An urban day-spa booking experience — a multi-step booking wizard with a live order summary and client-side availability. Serene, warm, wellness-luxury.
+A day-spa booking prototype built around a four-step wizard: choose a treatment and duration,
+pick a day and time from a live availability grid, enter details, and confirm. A sticky summary
+tracks the running total and flags when thermal-suite access is included. Availability is
+deterministic and computed client-side — no backend — so every reload shows the same open and
+sold-out slots. Also: a home page with most-booked treatments and reviews, a filterable
+treatments list, and day passes.
 
-## Status
+## Develop
 
-🚧 **In progress.** This repository is initialised; the full build lands in its portfolio
-phase. The live demo will be linked here once deployed.
+```bash
+npm install
+make dev      # Angular dev server (http://localhost:4200)
+make lint     # prettier
+make test     # vitest (availability logic)
+make build    # static SPA build → dist/cosy-scaffold/browser/
+```
 
 ## Notes
 
-- The brand, copy, and imagery are fictional concept work created for portfolio purposes.
-- Any photography is used under the Unsplash license and credited in `CREDITS.md`.
+- Brand and copy are fictional concept work for portfolio purposes.
+- Photography is from Unsplash (optimised into `public/img/`); see `CREDITS.md`.
 
 ## License
 
