@@ -40,6 +40,7 @@ export class App {
   ];
 
   readonly page = signal<Page>("home");
+  readonly menuOpen = signal(false);
   readonly cat = signal("All");
   readonly step = signal(1);
   readonly treatmentId = signal("t1");

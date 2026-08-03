@@ -18,7 +18,23 @@
       >
       <span class="nav-a" style="color: var(--muted)">Gift cards</span>
     </div>
-    <span class="btn-pill" (click)="startBooking()">Book a treatment</span>
+    <span class="btn-pill nav-book" (click)="startBooking()">Book a treatment</span>
+    <button
+      class="nav-hamburger"
+      [attr.aria-label]="menuOpen() ? 'Close menu' : 'Open menu'"
+      (click)="menuOpen.set(!menuOpen())"
+    >
+      {{ menuOpen() ? "✕" : "☰" }}
+    </button>
+
+    @if (menuOpen()) {
+    <div class="nav-mobile-menu">
+      <span (click)="go('treatments'); menuOpen.set(false)" class="nav-a">Treatments</span>
+      <span (click)="go('passes'); menuOpen.set(false)" class="nav-a">Day passes</span>
+      <span class="nav-a" style="color: var(--muted)">Gift cards</span>
+      <span class="btn-pill" (click)="startBooking(); menuOpen.set(false)">Book a treatment</span>
+    </div>
+    }
   </nav>
 
   <div style="flex: 1">

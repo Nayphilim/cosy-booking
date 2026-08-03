@@ -525,3 +525,60 @@
     display: none;
   }
 }
+
+/* ---- Mobile nav (hamburger below 760px) ---- */
+.nav-hamburger {
+  display: none;
+}
+.nav-mobile-menu {
+  display: none;
+}
+@media (max-width: 760px) {
+  .nav-links,
+  .nav-book {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--ink);
+    padding: 0;
+    width: 28px;
+  }
+  .nav-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f7f7f4;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 20px 18px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  }
+  .nav-mobile-menu .nav-a {
+    padding: 13px 0;
+    font-size: 15px;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-mobile-menu .btn-pill {
+    margin-top: 12px;
+    text-align: center;
+  }
+  .nav {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
